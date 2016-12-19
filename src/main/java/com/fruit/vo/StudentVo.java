@@ -13,7 +13,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
-public class Student extends ResourceSupport {
+public class StudentVo extends ResourceSupport {
     private String username;
     private String realName;
     private int age;
