@@ -12,7 +12,6 @@ import lombok.Setter;
 public class School extends BaseEntity {
     private static final long serialVersionUID = -1722741716413489933L;
     private String name;
-    private String password;
     private String logo;
     private String images; // 风采照片 json格式{简介(key):图片(img)}
     private String homepage; // 主页
@@ -30,6 +29,6 @@ public class School extends BaseEntity {
     private String info;
 
     // 账户信息
-    private Long accountId;
-    private Account account;
+    private String username;
+    private String password;
 }

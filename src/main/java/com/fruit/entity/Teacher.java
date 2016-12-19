@@ -36,6 +36,6 @@ public class Teacher extends BaseEntity {
     private School school;
 
     // 账户信息
-    private Long accountId;
-    private Account account;
+    private String username;
+    private String password;
 }

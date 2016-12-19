@@ -34,6 +34,6 @@ public class Student extends BaseEntity {
     private String grade;
 
     // 账户信息
-    private Long accountId;
-    private Account account;
+    private String username;
+    private String password;
 }
