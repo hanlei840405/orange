@@ -1,5 +1,6 @@
-package com.fruit.entity;
+package com.fruit.vo;
 
+import com.fruit.entity.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -12,7 +13,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
-public class User extends ResourceSupport {
+public class Student extends ResourceSupport {
     private String username;
     private String realName;
     private int age;

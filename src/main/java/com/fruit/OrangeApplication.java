@@ -1,5 +1,6 @@
 package com.fruit;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableEurekaClient
 @SpringBootApplication
 @EnableCircuitBreaker
+@MapperScan("com.fruit.mapper")
 public class OrangeApplication {
 
     @Bean
