@@ -1,8 +1,8 @@
 package com.fruit.rest;
 
+import com.fruit.dto.StudentDto;
 import com.fruit.entity.Student;
 import com.fruit.mapper.StudentMapper;
-import com.fruit.vo.StudentVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,20 +22,11 @@ public class StudentRestController {
     private StudentMapper studentMapper;
 
     @RequestMapping("/username/{username}")
-    public StudentVo username(@PathVariable("username") String username) {
+    public StudentDto username(@PathVariable("username") String username) {
         Student student = studentMapper.getByUsername(username);
-        StudentVo studentVo = new StudentVo();
-        BeanUtils.copyProperties(student, studentVo);
-        studentVo.add(linkTo(methodOn(StudentRestController.class).username(username)).withSelfRel());
-        return studentVo;
-    }
-
-    @RequestMapping("/save")
-    public StudentVo username(Student student) {
-        studentMapper.insert(student);
-        StudentVo studentVo = new StudentVo();
-        BeanUtils.copyProperties(student, studentVo);
-        studentVo.add(linkTo(methodOn(StudentRestController.class).username(student.getUsername())).withSelfRel());
-        return studentVo;
+        StudentDto studentDto = new StudentDto();
+        BeanUtils.copyProperties(student, studentDto);
+        studentDto.add(linkTo(methodOn(StudentRestController.class).username(username)).withSelfRel());
+        return studentDto;
     }
 }
