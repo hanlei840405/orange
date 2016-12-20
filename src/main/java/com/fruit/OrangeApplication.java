@@ -1,7 +1,10 @@
 package com.fruit;
 
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.amqp.rabbit.annotation.Queue;
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.core.TopicExchange;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -25,6 +28,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @MapperScan("com.fruit.mapper")
 @EnableSwagger2
 public class OrangeApplication {
+
+    @Bean
+    public Queue studentQueue() {
+        return new Queue("queue.student", true, false, true);
+    }
 
     @Bean
     Sampler sampler() {

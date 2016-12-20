@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
-
 /**
  * Created by JesseHan on 2016/12/19.
  */
@@ -25,8 +22,9 @@ public class StudentRestController {
     public StudentDto username(@PathVariable("username") String username) {
         Student student = studentMapper.getByUsername(username);
         StudentDto studentDto = new StudentDto();
-        BeanUtils.copyProperties(student, studentDto);
-        studentDto.add(linkTo(methodOn(StudentRestController.class).username(username)).withSelfRel());
+        if (student != null) {
+            BeanUtils.copyProperties(student, studentDto);
+        }
         return studentDto;
     }
 }
