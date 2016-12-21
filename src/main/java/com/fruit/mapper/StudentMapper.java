@@ -61,7 +61,7 @@ public interface StudentMapper {
     List<Student> findByGrade(String grade);
 
     @Select("SELECT * FROM student WHERE status = #{status}")
-    List<Student> findByStatus(String status);
+    List<Student> findByStatus(int status);
 
     @Insert("INSERT INTO student (id, username, password, nick, real_name, photo, age, gender, birthday, cellphone, " +
             "email, we_chat, wei_bo, qq, province, city, district, address, school, grade, status, created, creator, " +

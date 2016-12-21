@@ -27,3 +27,19 @@ CREATE TABLE `edu`.`student` (
   `modifier` VARCHAR(45) NULL COMMENT '修改人',
   `modified` DATETIME NULL COMMENT '修改时间',
   PRIMARY KEY (`id`));
+
+  DROP TABLE IF EXISTS `edu`.`category`;
+CREATE TABLE `edu`.`category` (
+  `id` INT NOT NULL COMMENT '主键',
+  `code` VARCHAR(45) NULL COMMENT '编号',
+  `name` VARCHAR(32) NULL COMMENT '名称',
+  `imgUrl` VARCHAR(45) NULL COMMENT '图片链接地址',
+  `sequence` VARCHAR(45) NULL COMMENT '排序号',
+  `status` CHAR(1) NULL COMMENT '状态，0：无效，1：有效',
+  `version` TINYINT NULL COMMENT '版本',
+  `creator` VARCHAR(45) NULL COMMENT '创建人',
+  `created` DATETIME NULL COMMENT '创建时间',
+  `modifier` VARCHAR(45) NULL COMMENT '修改人',
+  `modified` DATETIME NULL COMMENT '修改时间',
+  PRIMARY KEY (`id`));
+
