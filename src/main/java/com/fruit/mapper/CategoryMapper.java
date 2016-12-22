@@ -19,7 +19,7 @@ public interface CategoryMapper {
     Student getByCode(String code);
 
     @Select("SELECT * FROM category WHERE category_code = #{categoryCode} AND status=#{status} ORDER BY sequence")
-    List<Category> findByParent(String parentCode, int status);
+    List<Category> findByParent(@Param("categoryCode") String categoryCode, @Param("status") int status);
 
     @Select("SELECT * FROM category WHERE status = #{status} ORDER BY sequence")
     List<Category> findByStatus(int status);
