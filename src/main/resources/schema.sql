@@ -32,7 +32,8 @@ CREATE TABLE `edu`.`student` (
 CREATE TABLE `edu`.`category` (
   `id` INT NOT NULL COMMENT '主键',
   `code` VARCHAR(45) NULL COMMENT '编号',
-  `name` VARCHAR(32) NULL COMMENT '名称',
+  `name` VARCHAR(45) NULL COMMENT '名称',
+  `category_code` VARCHAR(45) NULL COMMENT '上级类目',
   `imgUrl` VARCHAR(45) NULL COMMENT '图片链接地址',
   `sequence` VARCHAR(45) NULL COMMENT '排序号',
   `status` CHAR(1) NULL COMMENT '状态，0：无效，1：有效',

@@ -15,6 +15,6 @@ public class Dictionary extends BaseEntity {
     private String name;
 
     // 字典对象
-    private Long dictionaryId;
+    private Long dictionaryCode;
     private Dictionary dictionary;
 }

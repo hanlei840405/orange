@@ -14,7 +14,8 @@ import org.springframework.stereotype.Service;
  */
 @Slf4j
 @Service
-public class GeneratorServiceImpl implements GeneratorService {
+public class GeneratorServiceImpl<T> implements GeneratorService {
+
     @Value("${zk.url}")
     private String url;
 

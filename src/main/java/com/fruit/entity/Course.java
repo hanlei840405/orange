@@ -15,18 +15,18 @@ public class Course extends BaseEntity {
     private String description;
 
     // 类目信息
-    private Long categoryId;
+    private Long categoryCode;
     private Category category;
 
     // 字典信息：专场、系列等
-    private Long dictionaryId;
+    private Long dictionaryCode;
     private Dictionary dictionary;
 
     // 上一集课程
-    private Long preId;
+    private Long preCode;
     private Course pre;
 
     // 下一集课程
-    private Long nextId;
+    private Long nextCode;
     private Course next;
 }

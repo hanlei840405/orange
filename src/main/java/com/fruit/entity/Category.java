@@ -25,7 +25,7 @@ public class Category extends BaseEntity {
     private Long sequence;
 
     // 上级导航属性
-    private Long categoryId;
+    private Long categoryCode;
     private Category category;
     private List<Category> elements = new ArrayList<>();
 }

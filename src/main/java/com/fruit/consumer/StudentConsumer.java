@@ -25,7 +25,7 @@ public class StudentConsumer {
     private GeneratorService generatorService;
 
     //    @RabbitListener(bindings = @QueueBinding(value = @Queue(value = "student", autoDelete = "true", durable = "true"), exchange = @Exchange(value = "edu", durable = "true", autoDelete = "true"), key = "insert"))
-    @RabbitListener(queues = "queue.student")
+    @RabbitListener(queues = "queue.student.insert")
     public void insert(StudentDto studentDto) {
         Student student = new Student();
         BeanUtils.copyProperties(studentDto, student);
